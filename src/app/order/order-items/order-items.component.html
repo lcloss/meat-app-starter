@@ -21,7 +21,7 @@
       <td>{{ item.menuItem.description }}</td>
       <td class="text-right">{{ item.value() | currency: 'EUR': true }}</td>
       <td class="text-right">
-        <a (click)="remove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+        <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
       </td>
     </tr>
     </tbody>

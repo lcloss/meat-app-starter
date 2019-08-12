@@ -25,15 +25,15 @@ export class OrderComponent implements OnInit {
     return this.orderService.cartItems()
   }
 
-  increaseQty(item: CartItem) {
+  increaseQty(item: CartItem): void {
     this.orderService.increaseQty(item)
   }
 
-  decreaseQty(item: CartItem) {
+  decreaseQty(item: CartItem): void {
     this.orderService.decreaseQty(item)
   }
 
-  remove(item: CartItem) {
+  remove(item: CartItem): void {
     this.orderService.remove(item)
   }
 }
