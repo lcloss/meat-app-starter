@@ -1,0 +1,10 @@
+<div class="form-group" [class.has-success]="hasSuccess()"
+                        [class.has-error]="hasError()">
+    <label class="control-label sr-only" for="address"><i class="fa fa-check"></i> {{ label }}</label>
+    <!-- input type="text" class="form-control" id="address" name="address" ngModel required autocomplete="off" minlength="5" #input="ngModel" placeholder="Endereço" -->
+    
+    <ng-content></ng-content>
+
+    <span class="help-block" *ngIf="hasError()"><i class="fa fa-remove"></i> {{ messageError }}</span>
+    <span class="help-block" *ngIf="hasSuccess()"><i class="fa fa-check"></i> Ok</span>
+</div>

@@ -1,0 +1,101 @@
+      <!--INICIO DO CONTEUDO-->
+      <section class="content-header">
+      </section>
+
+      <section class="content">
+        <section class="invoice">
+
+          {{ form.valid }}
+          {{ form.value | json }}
+
+          <form #form="ngForm" novalidate>
+            <div class="row">
+                  <div class="col-xs-12">
+                    <h2 class="page-header">
+                      <i class="fa fa-shopping-cart"></i> Finalize o seu pedido
+                    </h2>
+                  </div>
+                </div>                
+
+                <div class="row invoice-info">
+                  <div class="col-xs-12">
+                    <p class="lead">Endereço de Entrega:</p>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                    <mt-input-container label="Endereço" messageError="Campo obrigatório. Mínimo 5 caracteres.">
+                      <input type="text" ngModel class="form-control" id="address" name="address" required autocomplete="off" minlength="5" placeholder="Endereço">
+                    </mt-input-container>
+                  </div>
+                  <div class="col-sm-3 col-xs-6">
+                    <mt-input-container label="Número" messageError="Campo obrigatório. Apenas números.">
+                      <input type="text" ngModel class="form-control" id="port_number" name="port_number" required pattern="^[0-9]*$" autocomplete="off" placeholder="Número">
+                    </mt-input-container>
+                  </div>
+                  <div class="col-sm-3 col-xs-6">
+                    <mt-input-container label="Complemento" messageError="">
+                      <input type="text" ngModel class="form-control" id="complement" name="complement" autocomplete="off" placeholder="Complemento">
+                    </mt-input-container>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <!-- Table row -->
+                <div class="row">
+                  <div class="col-xs-12">
+                    <p class="lead">Itens do Pedido:</p>
+                  </div>
+                  <div class="col-xs-12 table-responsive">
+                    <mt-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (remove)="remove($event)"></mt-order-items>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                  <!-- accepted payments column -->
+                  <div class="col-sm-6 col-xs-12">
+                    <p class="lead">Formas de Pagamento:</p>
+                    <div class="form-group">
+                    
+                      <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
+
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-6 col-xs-12">
+                    <p class="lead">Frete e Total:</p>
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody><tr>
+                          <th style="width:50%">Itens:</th>
+                          <td class="text-right">R$ 20,00</td>
+                        </tr>
+                        <tr>
+                          <th>Frete:</th>
+                          <td class="text-right">R$ 8,00</td>
+                        </tr>
+                        <tr>
+                          <th>Total:</th>
+                          <td class="text-right">R$ 28,00</td>
+                        </tr>
+                      </tbody></table>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                </div>
+
+              </form>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <!-- a href="order-summary.html" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir Pedido
+                  </!-->
+                  <button class="btn btn-success pull-right" [disabled]="form.invalid"><i class="fa fa-credit-card"></i> Concluir Pedido</button>
+                </div>
+              </div>
+
+          </section>
+      </section>
+      <!-- FIM DO CONTEUDO-->
