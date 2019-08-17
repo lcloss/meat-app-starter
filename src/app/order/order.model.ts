@@ -1,9 +1,12 @@
 class Order {
-    public address: string
-    public port_number: string
-    public complement: string
-    public paymentMethod: string
-    public orderItems: OrderItem[]
+    constructor(
+        public address: string,
+        public port_number: string,
+        public complement: string,
+        public paymentMethod: string,
+        public orderItems: OrderItem[],
+        public id?: string
+    ) { }
 
 }
 
