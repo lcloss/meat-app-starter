@@ -492,6 +492,54 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "Luciano Closs",
+      "email": "lcloss@gmail.com",
+      "email_confirmation": "lcloss@gmail.com",
+      "address": "Rua Fernão Lopes",
+      "port_number": "10",
+      "complement": "4º dto",
+      "payment_option": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "Amanda",
+      "email": "amanda@example.com",
+      "email_confirmation": "amanda@example.com",
+      "address": "Rua Fernão Lopes",
+      "port_number": "10",
+      "complement": "4º dto",
+      "payment_option": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "burger"
+        },
+        {
+          "quantity": 1,
+          "menuId": "fries"
+        },
+        {
+          "quantity": 1,
+          "menuId": "coke.png"
+        }
+      ],
+      "id": 7
     }
   ]
 }

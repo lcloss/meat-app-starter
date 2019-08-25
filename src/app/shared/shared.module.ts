@@ -12,6 +12,10 @@ import { OrderService } from 'app/order/order.service';
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { NotificationService } from './messages/notification.service';
 import { LoginService } from 'app/security/login/login.service';
+import { LoggedInGuard } from 'app/security/loggedin.guard';
+import { LeaveOrderGuard } from 'app/order/leave-order.guard';
+import { AuthInterceptor } from 'app/security/auth.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -45,7 +49,12 @@ export class SharedModule {
                 RestaurantsService,
                 OrderService,
                 NotificationService,
-                LoginService
+                LoginService,
+                LoggedInGuard,
+                LeaveOrderGuard,
+                { provide: HTTP_INTERCEPTORS,
+                    useClass: AuthInterceptor,
+                    multi: true }
             ]
         }
     }

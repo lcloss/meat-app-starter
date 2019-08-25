@@ -18,6 +18,8 @@ export class OrderComponent implements OnInit {
 
   orderForm: FormGroup
 
+  orderId: string
+
   delivery: number = 7.25
 
   paymentOptions: RadioOption[] = [
@@ -78,9 +80,17 @@ export class OrderComponent implements OnInit {
 
   checkOrder(order: Order) {
     order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
-    this.orderService.checkOrder(order).subscribe(( orderId: string ) => {
-      this.orderService.clear()
-      this.router.navigate(['/order-summary'])
-    })
+    this.orderService.checkOrder(order)
+                     .do( (orderId: string) => {
+                       this.orderId = orderId
+                     })
+                     .subscribe(( orderId: string ) => {
+                        this.orderService.clear()
+                        this.router.navigate(['/order-summary'])
+                      })
+  }
+
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined
   }
 }
