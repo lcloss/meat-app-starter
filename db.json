@@ -540,6 +540,30 @@
         }
       ],
       "id": 7
+    },
+    {
+      "name": "Amanda",
+      "email": "amanda@example.com",
+      "email_confirmation": "amanda@example.com",
+      "address": "Rua Fernão Lopes",
+      "port_number": "10",
+      "complement": "4D",
+      "payment_option": "MB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 8
     }
   ]
 }
