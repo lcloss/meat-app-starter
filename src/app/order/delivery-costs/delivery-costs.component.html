@@ -4,15 +4,15 @@
   <table class="table">
     <tbody><tr>
       <th style="width:50%">Itens:</th>
-      <td class="text-right">{{ itemsValue | currency: 'EUR': true }}</td>
+      <td class="text-right">{{ itemsValue | currency: 'EUR': 'symbol' }}</td>
     </tr>
     <tr>
       <th>Frete:</th>
-      <td class="text-right">{{ delivery | currency: 'EUR': true }}</td>
+      <td class="text-right">{{ delivery | currency: 'EUR': 'symbol' }}</td>
     </tr>
     <tr>
       <th>Total:</th>
-      <td class="text-right">{{ total() | currency: 'EUR': true }}</td>
+      <td class="text-right">{{ total() | currency: 'EUR': 'symbol' }}</td>
     </tr>
   </tbody></table>
 </div>
