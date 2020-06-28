@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
-import { NotificationService } from '../notification.service';
+import { NotificationService } from './../notification.service';
 
 import { Observable, timer } from 'rxjs';
 import { tap, switchMap } from 'rxjs/operators';

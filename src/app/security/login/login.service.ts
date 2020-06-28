@@ -25,7 +25,7 @@ export class LoginService {
     }
 
     logout() {
-        this.user = undefined
+        delete this.user
     }
 
     isLoggedIn(): boolean {

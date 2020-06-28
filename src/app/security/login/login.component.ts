@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { LoginService } from './login.service';
 import { NotificationService } from 'app/shared/messages/notification.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,11 +31,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
-                     .subscribe(user => 
-                                  this.notificationService.notify(`Bem vindo ${user.name}`),
-                                response => // HttpErrorResponse
-                                  this.notificationService.notify(response.error.message),
-                                () => this.router.navigate([ atob(this.navigateTo) ]))
+                     .subscribe( user       => this.notificationService.notify(`Bem vindo ${user.name}`)
+                               , response   => // HttpErrorResponse
+                                               this.notificationService.notify(response.error.message)
+                               , ()         => this.router.navigate([ atob(this.navigateTo) ]))
   }
 
 }
